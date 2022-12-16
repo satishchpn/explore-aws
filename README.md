@@ -41,20 +41,19 @@ Click on keshri-bucket
 	Go to permissions tab 
 	Click on Edit Bucket Policy
 	Paste below policy Json
-	
-	{
-	   "Version":"2012-10-17",
-	   "Id":"Policy1671206715413",
-	   "Statement":[
-		  {
-			 "Sid":"Stmt1671206713512",
-			 "Effect":"Allow",
-			 "Principal":"*",
-			 "Action":"s3:*",
-			 "Resource":"arn:aws:s3:::keshri-bucket/*"
-		  }
-	   ]
-	}
+		{
+		   "Version":"2012-10-17",
+		   "Id":"Policy1671206715413",
+		   "Statement":[
+			  {
+				 "Sid":"Stmt1671206713512",
+				 "Effect":"Allow",
+				 "Principal":"*",
+				 "Action":"s3:*",
+				 "Resource":"arn:aws:s3:::keshri-bucket/*"
+			  }
+		   ]
+		}
 	
 	
 	Click on Save changes
