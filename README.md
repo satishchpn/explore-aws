@@ -1,10 +1,12 @@
 # explore-aws
 
-Create Spring boot Project make jar ready to place into aws s3 bucket
+Download Spring boot Project(spring-boot-aws-example) and build jar or directly download spring-boot-aws-example.jar to later place into aws s3 bucket.
+
 Login to AWS account
 	UN: cloud_user
 	Password:<password>
-Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
+	
+Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
 
 Navigate to IAM dashboard(AWS Region: US East (N. Virginia) us-east-1)
 	
@@ -54,6 +56,7 @@ Click on keshri-bucket
 	   ]
 	}
 	
+	
 	Click on Save changes
 
 Click on Buckets
@@ -83,7 +86,7 @@ Navigate to EC2 Dashboard(AWS Region: US East (N. Virginia) us-east-1)
 		Choose IAM Instance Profile:keshri_role
 	Click on Launch Instance
 
-Connect keshri_ec2 EC2 instance using putty
+Connect keshri_ec2 EC2 instance using Putty
 	Go to EC2
 		Click on Instances
 		Select keshri_ec2 to see the details
@@ -120,6 +123,7 @@ Run the Jar
 See the API Result In Browser
 ------------------------------
 <ec2_host>:8080/home/
+
 http://ec2-54-157-252-131.compute-1.amazonaws.com:8080/home/
 
 Welcome Keshri to First Spring Boot - AWS Deployment Demo
