@@ -1,16 +1,16 @@
 # explore-aws
 
-Download Spring boot Project(spring-boot-aws-example) and build jar or directly download spring-boot-aws-example.jar to later place into aws s3 bucket.
+> Download Spring boot Project(spring-boot-aws-example) and build jar or directly download spring-boot-aws-example.jar to later place into aws s3 bucket.
 
-Login to AWS account
+>Login to AWS account
 	UN: cloud_user
 	Password:<password>
 	
-Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
+>Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
 
-Navigate to IAM dashboard(AWS Region: US East (N. Virginia) us-east-1)
+>Navigate to IAM dashboard(AWS Region: US East (N. Virginia) us-east-1)
 	
-Click on Roles
+>Click on Roles
 	Click on create Role
 	Trusted entity type:AWS Service
 	Use case:EC2
@@ -29,7 +29,7 @@ Click on Roles
 	Role Name:keshri_role
 	Click on create Role
 
-Navigate to S3 Dashboard(AWS Region: US East (N. Virginia) us-east-1)
+>Navigate to S3 Dashboard(AWS Region: US East (N. Virginia) us-east-1)
 	Click on create Bucket
 	Bucket Name:keshri-bucket
 	AWS Region: US East (N. Virginia) us-east-1
@@ -37,10 +37,10 @@ Navigate to S3 Dashboard(AWS Region: US East (N. Virginia) us-east-1)
 	Select : I acknowledge
 	Click on create Bucket
 
-Click on keshri-bucket
+>Click on keshri-bucket
 	Go to permissions tab 
 	Click on Edit Bucket Policy
-	Paste below policy Json
+	Paste below policy JSON
 	
 		{
 			   "Version":"2012-10-17",
@@ -55,12 +55,11 @@ Click on keshri-bucket
 				  }
 			   ]
 		}
-		
 	
 	
 	Click on Save changes
 
-Click on Buckets
+>Click on Buckets
 	Select keshri-bucket (will able to see access as public)
 	Click on Upload
 	Drop spring-boot-aws-example.jar
@@ -68,7 +67,7 @@ Click on Buckets
 	Now click on uploaded jar to see the details
 	Object URL it will be used later to download the jar from keshri_ec2: https://keshri-bucket.s3.amazonaws.com/spring-boot-aws-example.jar
 
-Navigate to EC2 Dashboard(AWS Region: US East (N. Virginia) us-east-1)	
+>Navigate to EC2 Dashboard(AWS Region: US East (N. Virginia) us-east-1)	
 	Click on Launch Instance
 	Name:keshri_ec2
 	Click on Create new key pair
@@ -87,7 +86,7 @@ Navigate to EC2 Dashboard(AWS Region: US East (N. Virginia) us-east-1)
 		Choose IAM Instance Profile:keshri_role
 	Click on Launch Instance
 
-Connect keshri_ec2 EC2 instance using Putty
+>Connect keshri_ec2 EC2 instance using Putty
 	Go to EC2
 		Click on Instances
 		Select keshri_ec2 to see the details
@@ -108,20 +107,20 @@ Connect keshri_ec2 EC2 instance using Putty
 		After successful login
 		Type below commands in Putty Terminal
 
->sudo -i
->yum install java
->y
->alternatives --config java(command to check java versions availbale on that ec2 instance)
->aws s3 ls(To see available s3 bucket access)
+->sudo -i
+->yum install java
+->y
+->alternatives --config java(command to check java versions availbale on that ec2 instance)
+->aws s3 ls(To see available s3 bucket access)
 	It will show keshri-bucket
 Download the jar from s3 bucket to keshri_ec2 instance
->wget <jar_url>
->wget https://keshri-bucket.s3.amazonaws.com/spring-boot-aws-example.jar
->ls
+->wget <jar_url>
+->wget https://keshri-bucket.s3.amazonaws.com/spring-boot-aws-example.jar
+->ls
 Run the Jar
->java -jar spring-boot-aws-example.jar
+->java -jar spring-boot-aws-example.jar
 
-See the API Result In Browser
+->See the API Result In Browser
 ------------------------------
 <ec2_host>:8080/home/
 
