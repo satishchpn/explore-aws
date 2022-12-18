@@ -230,6 +230,14 @@ Welcome Keshri to First Spring Boot - AWS Deployment Demo
 			
 	UnComment <packaging>war</packaging> in pom.xml
 	Open cmd and type mvn clean install to create spring-boot-aws-example.war file
+			
+
+> Login to AWS account
+	UN: cloud_user
+	Password:<password>
+			
+> Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
+			
 
 > Navigate to Elastic Beanstalk Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
@@ -248,18 +256,6 @@ Welcome Keshri to First Spring Boot - AWS Deployment Demo
 		http://springbootawsexample-env.eba-przda2pf.us-east-1.elasticbeanstalk.com/home/
 
 	
-			
-			
-
-
-> Login to AWS account
-	UN: cloud_user
-	Password:<password>
-	
-> Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
-
-		
-
 	
 	
 	
