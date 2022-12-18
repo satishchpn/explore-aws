@@ -12,6 +12,7 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 > Download Spring boot Project(spring-boot-aws-example.zip). Unzip this and build jar to later place into aws s3 bucket.
+	Open cmd and type mvn clean install to create spring-boot-aws-example.jar
 
 
 > Login to AWS account
@@ -212,12 +213,51 @@ Welcome Keshri to First Spring Boot - AWS Deployment Demo
 		Again go to keshri-bucket properties tab
 		Go to Static website hosting section
 		Use Bucket website endpoint to open in the browser
+			
 
 > See the Hosted Website In Browser
 
 		http://keshri-bucket.s3-website-us-east-1.amazonaws.com/
 
 		It will show List of Universities In India
+			
+			
+			
+# Use ElasticBeanStalk
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+> Download Spring boot Project(spring-boot-aws-example.zip). Unzip this and build war file to later place into aws s3 bucket.
+			
+	UnComment <packaging>war</packaging> in pom.xml
+	Open cmd and type mvn clean install to create spring-boot-aws-example.war file
+
+> Navigate to Elastic Beanstalk Dashboard (AWS Region: US East (N. Virginia) us-east-1)
+	
+	Click on Create Application
+	Application name: spring-boot-aws-example
+	Platform: Tomcat
+	Application code: Upload your code
+	Source code origin: Click on choose file
+	Upload spring-boot-aws-example.war
+	Click on Create Application
+	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsexample-env and Health as OK(Green)
+	You will find the ec2 instance application url : http://springbootawsexample-env.eba-przda2pf.us-east-1.elasticbeanstalk.com/
+	
+> See the API Result In Browser
+
+		http://springbootawsexample-env.eba-przda2pf.us-east-1.elasticbeanstalk.com/home/
+
+	
+			
+			
+
+
+> Login to AWS account
+	UN: cloud_user
+	Password:<password>
+	
+> Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
+
 		
 
 	
