@@ -96,7 +96,7 @@
 		Click on Edit Network settings
 		Under Inbound security groups rules click on add security group rule
 		Type:Custom TCP
-		Port Range:8080
+		Port Range:5000 (Intentionally given as later In elastic beanstalk default port is 5000 so keeping common across all example)
 		SourceType:Anywhere
 		Click Advanced Details
 		Choose IAM Instance Profile:keshri_role
@@ -143,13 +143,13 @@
 
 > See the API Result In Browser
 
-		<ec2_host>:8080/home/
+		http://ec2-54-157-252-131.compute-1.amazonaws.com:5000
+		Hi Keshri - Welcome to AWS
 		
-		http://ec2-54-157-252-131.compute-1.amazonaws.com:8080/home/
-		
-		
+		http://ec2-54-157-252-131.compute-1.amazonaws.com:5000/home
+		Welcome Keshri to First Spring Boot - AWS Deployment Demo
+
 	
-Welcome Keshri to First Spring Boot - AWS Deployment Demo
 
 #Deploy Angular application to AWS
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -228,7 +228,7 @@ Welcome Keshri to First Spring Boot - AWS Deployment Demo
 
 > Download Spring boot Project(spring-boot-aws-example.zip). Unzip it and build jar file to later upload into Elastic BeanStalk.
 	
-	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000
+	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
 		Open application.properties change server.port to 5000
 		server.port=5000
 		Open cmd and type mvn clean install to create spring-boot-aws-example.jar file
@@ -261,6 +261,24 @@ Welcome Keshri to First Spring Boot - AWS Deployment Demo
 			
 		http://springbootawsexample-env.eba-fuepzbxp.us-east-1.elasticbeanstalk.com/home
 		Welcome Keshri to First Spring Boot - AWS Deployment Demo	
+
+			
+			
+# Use ElasticBeanStalk & DynamoDB
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+> Download Spring boot Project(spring-boot-aws-example.zip). Unzip it and build jar file to later upload into Elastic BeanStalk.
+	
+	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
+		Open application.properties change server.port to 5000
+		server.port=5000
+		Open cmd and type mvn clean install to create spring-boot-aws-example.jar file
+			
+
+> Login to AWS account
+	UN: cloud_user
+	Password: <password>
 	
 	
 	
