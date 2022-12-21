@@ -87,7 +87,7 @@
 	Upload spring-boot-aws-dynamodb-example.jar
 	Click on Create Application
 	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsdynamodbexample-env and Health as OK(Green)
-	You will find the ec2 instance application url : http://springbootawsexample-env.eba-fuepzbxp.us-east-1.elasticbeanstalk.com/
+	You will find the ec2 instance application url : http://springbootawsdynamodbexample-env.eba-pdkhfjup.us-east-1.elasticbeanstalk.com/
 	
 > Verify the API through Postman using CRUD Operations
 		
