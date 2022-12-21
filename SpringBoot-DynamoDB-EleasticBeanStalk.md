@@ -10,7 +10,7 @@
 	Step5 : Attach the Policy To User Group
 	Step6:  Develop the Spring Boot Demp APP using the user credentials and DynamoDB Config or Download the Demo Application Zip File and Update DynamoDB Configs
 	Step7:  Create Application in Elastic BeanStalk
-	Steps8: Download Postman Collection(springboot-dynamodb-api-collection)
+	Steps8: Download Postman Collection(spring-boot-aws-dynamodb-example.postman_collection.json)
 	Step9:  Update the Application url in Postaman APIs
 	Step10: Verify the API to perform CRUD Oertaions on DynamoDB Table Using Postman Colection
 
