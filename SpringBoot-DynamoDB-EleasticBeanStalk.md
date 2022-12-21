@@ -11,13 +11,14 @@
 	Step6:  Develop the Spring Boot Demp APP using the user credentials and DynamoDB Config or Download the Demo Application Zip File and Update DynamoDB Configs
 	Step7:  Create Application in Elastic BeanStalk
 	Steps8: Download Postman Collection(springboot-dynamodb-api-collection)
-	Step8: 	Verify the API with CRUD Operations Using Postman Colection
+	Step9:  Update the Application url in Postaman APIs
+	Step10: Verify the API to perform CRUD Oertaions on DynamoDB Table Using Postman Colection
 
 > Navigate to DynamoDB Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
 	Click on Create Table
 	Table Name: Employee
-	Primary Key: employeeId(String)
+	Partition key: employeeId(String)
 	Click on Create Table
 	Table got Created , now to access this table from Java Application we have to create User Group,User and Policy e.t.c
 
@@ -32,6 +33,7 @@
 	
 	Create a User
 		Click on Users
+		Click on Add Users
 		User name: keshri_admin_user
 		Select AWS access type: Access key - Programmatic access
 		Click on Next Permissions
@@ -41,32 +43,32 @@
 		Click on Create User
 		After Successful creation of User you will get Access Key Id and Secret Access Key, 
 		Copy and keep with you, it will be used tpo connect to DynamoDB from Application
-		Access key ID: AKIARSFB3NQWJBSFXZAD
-		Secret access key : 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
+		Access key ID: AKIAZPWCPFWX5OPZ6AFB
+		Secret access key : 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
 		Click on Close
 	
 	Create Policy
 		Click on Policies
 		Click on Create Policy
-		Choose  Service: DynamoDB & Access Analyzer using add addition policy
+		Choose  Service: DynamoDB & SNS using add addition policy
 		Actions:all access
 		Resources:All resources
 		Click on next tags
 		Click on Next review
-		Name:keshri_dynamo_db_policy
+		Name: keshri_dynamo_db_policy
 		Click On Create policy
 	
 	Attch this Policy to User Group
 		Search policy : keshri_dynamo_db_policy
 		Select that policy
-		Click on Action
-		Click On Attach Policy
+		Click on Actions
+		Click On Attach
 		Select keshri_user_group
 		Click on Attach Policy
 			
 > Download Spring boot Project(spring-boot-aws-dynamodb-example.zip). 
 
-> Unzip it and update DynamoDB Configs in application.properties file and build jar file upload into Elastic BeanStalk.
+> Unzip it and update DynamoDB Configs in application.properties file and build jar file to upload into Elastic BeanStalk.
 	
 	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
 		Open application.properties change server.port to 5000
@@ -84,13 +86,12 @@
 	Source code origin: Click on choose file
 	Upload spring-boot-aws-dynamodb-example.jar
 	Click on Create Application
-	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsexample-env and Health as OK(Green)
+	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsdynamodbexample-env and Health as OK(Green)
 	You will find the ec2 instance application url : http://springbootawsexample-env.eba-fuepzbxp.us-east-1.elasticbeanstalk.com/
 	
 > Verify the API through Postman using CRUD Operations
-
-		http://springbootawsexample-env.eba-fuepzbxp.us-east-1.elasticbeanstalk.com/
-		Hi Keshri - Welcome to AWS
-			
-		http://springbootawsexample-env.eba-fuepzbxp.us-east-1.elasticbeanstalk.com/home
-		Welcome Keshri to First Spring Boot - AWS Deployment Demo
+		
+		Update the Application url in Postaman APIs
+		Call Each API to Perform CRUD Oertaions on DynamoDB Table
+		
+		
