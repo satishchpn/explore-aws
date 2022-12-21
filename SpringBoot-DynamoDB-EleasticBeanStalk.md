@@ -3,22 +3,15 @@
 
 > Steps To follow: 
 	
-	Step 1: Create Table
-	Step 2: Create a User Group
-	Step3 : Create a User
-	Step4 : Create a Policy
+	Step 1: Create Table In DynamoDB
+	Step 2: Create a User Group in IAM
+	Step3 : Create a User in IAM
+	Step4 : Create a Policy in IAM
 	Step5 : Attach the Policy To User Group
-	Step6:  Develop the Spring Boot Demp APP using the user credentials and DynamoDB Details or Download the demo Application Zip File
+	Step6:  Develop the Spring Boot Demp APP using the user credentials and DynamoDB Config or Download the Demo Application Zip File and Update DynamoDB Configs
 	Step7:  Create Application in Elastic BeanStalk
-	Step8: 	Verify the API with CRUD Operations.
-	
-> Download Spring boot Project(spring-boot-aws-dynamodb-example.zip). Unzip it and build jar file to later upload into Elastic BeanStalk.
-	
-	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
-		Open application.properties change server.port to 5000
-		server.port=5000
-		Open cmd and type mvn clean install to create spring-boot-aws-dynamodb-example.jar file
-	
+	Steps8: Download Postman Collection(springboot-dynamodb-api-collection)
+	Step8: 	Verify the API with CRUD Operations Using Postman Colection
 
 > Navigate to DynamoDB Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
@@ -71,7 +64,16 @@
 		Select keshri_user_group
 		Click on Attach Policy
 			
+> Download Spring boot Project(spring-boot-aws-dynamodb-example.zip). 
 
+> Unzip it and update DynamoDB Configs in application.properties file and build jar file upload into Elastic BeanStalk.
+	
+	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
+		Open application.properties change server.port to 5000
+		server.port=5000
+		Update DynamoDB Configurations
+		Open cmd and type mvn clean install to create spring-boot-aws-dynamodb-example.jar file
+		
 > Navigate to Elastic Beanstalk Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
 	Click on Create Application
