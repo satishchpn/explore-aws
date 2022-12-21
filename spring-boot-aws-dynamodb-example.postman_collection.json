@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "9a84539a-2c78-4d89-ab41-d461771367fe",
+		"name": "spring-boot-aws-dynamodb-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4221886"
+	},
+	"item": [
+		{
+			"name": "Add Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Satish Keshri-Test\",\r\n    \"age\": 30,\r\n    \"email\": \"keshri@gmail.com\",\r\n    \"address\": {\r\n        \"city\": \"Hazaribagh\",\r\n        \"state\": \"Jharkhand\",\r\n        \"pinCode\": \"825301\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://springbootawsdynamodbexample-env.eba-pdkhfjup.us-east-1.elasticbeanstalk.com/employee",
+					"protocol": "http",
+					"host": [
+						"springbootawsdynamodbexample-env",
+						"eba-pdkhfjup",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://springbootawsdynamodbexample-env.eba-pdkhfjup.us-east-1.elasticbeanstalk.com/employee/f93a6703-67c5-42f2-9a70-e501815eb2e2",
+					"protocol": "http",
+					"host": [
+						"springbootawsdynamodbexample-env",
+						"eba-pdkhfjup",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee",
+						"f93a6703-67c5-42f2-9a70-e501815eb2e2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": \"f93a6703-67c5-42f2-9a70-e501815eb2e2\",\r\n    \"name\": \"Satish Keshri-Test -Update\",\r\n    \"age\": \"30\",\r\n    \"email\": \"keshri@gmail.com\",\r\n    \"address\": {\r\n        \"city\": \"Hazaribagh\",\r\n        \"state\": \"Jharkhand\",\r\n        \"pinCode\": 825301\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://springbootawsdynamodbexample-env.eba-pdkhfjup.us-east-1.elasticbeanstalk.com/employee",
+					"protocol": "http",
+					"host": [
+						"springbootawsdynamodbexample-env",
+						"eba-pdkhfjup",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": \"f93a6703-67c5-42f2-9a70-e501815eb2e2\",\r\n    \"name\": \"Satish Keshri-Test -Update\",\r\n    \"age\": \"30\",\r\n    \"email\": \"keshri@gmail.com\",\r\n    \"address\": {\r\n        \"city\": \"Hazaribagh\",\r\n        \"state\": \"Jharkhand\",\r\n        \"pinCode\": 825301\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://springbootawsdynamodbexample-env.eba-pdkhfjup.us-east-1.elasticbeanstalk.com/employee",
+					"protocol": "http",
+					"host": [
+						"springbootawsdynamodbexample-env",
+						"eba-pdkhfjup",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
