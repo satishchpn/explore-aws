@@ -17,30 +17,30 @@
 
 > Navigate to RDS Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
-  Click on Databases
+	Click on Databases
 	Click on Create Database
-  Select Standard create
-  Engine type: MYSQL
-  Engine Version: MYSQL 8.0.28
-  Templates: Free tier
-  DB instance identifier: keshrirdsdb
-  Master username: root
-  Master password: password
-  Come down and Under Connectivity section
-  Public access: Yes
-  Come down under Additional configuration section
-  Initial database name: keshrirdsdb(this is schema name of our database)
-  Click on create database
-  Wait to see the db status as Available
-  Now click on keshrirdsdb database
-  Copy Endpoint & port and use it in your application db configuration
-  Click on VPC security groups url under Security
-  Select and Click on Security Group ID
-  Under Inbound rules section Click on Edit Inbound Rules
-  Click on Add Rule
-  Choose Type: MYSQL/Aurora
-  Source: Anywhere
-  Click on Save Rule
+	Select Standard create
+	Engine type: MYSQL
+	Engine Version: MYSQL 8.0.28
+	Templates: Free tier
+	DB instance identifier: keshrirdsdb
+	Master username: root
+	Master password: password
+	Come down and Under Connectivity section
+	Public access: Yes
+	Come down under Additional configuration section
+	Initial database name: keshrirdsdb(this is schema name of our database)
+	Click on create database
+	Wait to see the db status as Available
+	Now click on keshrirdsdb database
+	Copy Endpoint & port and use it in your application db configuration
+	Click on VPC security groups url under Security
+	Select and Click on Security Group ID
+	Under Inbound rules section Click on Edit Inbound Rules
+	Click on Add Rule
+	Choose Type: MYSQL/Aurora
+	Source: Anywhere
+	Click on Save Rule
   
 	Table Name: Employee
 	Partition key: employeeId(String)
