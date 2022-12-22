@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "d1eb6faf-b1a1-4ccd-8d8a-74fcf7b69553",
+		"name": "spring-boot-aws-rds-mysql-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4221886"
+	},
+	"item": [
+		{
+			"name": "Add Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Satish Keshri-Test - 1\",\r\n    \"age\": 30,\r\n    \"email\": \"keshri@gmail.com\",\r\n    \"address\": {\r\n        \"city\": \"Hazaribagh\",\r\n        \"state\": \"Jharkhand\",\r\n        \"pinCode\": \"825301\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://springbootawsrdsmysqlexample-env.eba-m7umiaim.us-east-1.elasticbeanstalk.com/employee",
+					"protocol": "http",
+					"host": [
+						"springbootawsrdsmysqlexample-env",
+						"eba-m7umiaim",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://springbootawsrdsmysqlexample-env.eba-m7umiaim.us-east-1.elasticbeanstalk.com/employee/1",
+					"protocol": "http",
+					"host": [
+						"springbootawsrdsmysqlexample-env",
+						"eba-m7umiaim",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://springbootawsrdsmysqlexample-env.eba-m7umiaim.us-east-1.elasticbeanstalk.com/employee",
+					"protocol": "http",
+					"host": [
+						"springbootawsrdsmysqlexample-env",
+						"eba-m7umiaim",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": 1,\r\n    \"name\": \"Satish Keshri-Test - Update\",\r\n    \"age\": \"30\",\r\n    \"email\": \"keshri@gmail.com\",\r\n    \"address\": {\r\n        \"id\": 1,\r\n        \"city\": \"Hazaribagh\",\r\n        \"state\": \"Jharkhand\",\r\n        \"pinCode\": 825301,\r\n        \"employee\": null\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://springbootawsrdsmysqlexample-env.eba-m7umiaim.us-east-1.elasticbeanstalk.com/employee",
+					"protocol": "http",
+					"host": [
+						"springbootawsrdsmysqlexample-env",
+						"eba-m7umiaim",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"employeeId\": 2,\r\n        \"name\": \"Satish Keshri-Test - 2\",\r\n        \"age\": \"31\",\r\n        \"email\": \"keshri@gmail.com\",\r\n        \"address\": {\r\n            \"id\": 2,\r\n            \"city\": \"Hazaribagh\",\r\n            \"state\": \"Jharkhand\",\r\n            \"pinCode\": 825301,\r\n            \"employee\": null\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://springbootawsrdsmysqlexample-env.eba-m7umiaim.us-east-1.elasticbeanstalk.com/employee",
+					"protocol": "http",
+					"host": [
+						"springbootawsrdsmysqlexample-env",
+						"eba-m7umiaim",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
