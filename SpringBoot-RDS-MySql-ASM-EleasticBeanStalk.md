@@ -79,7 +79,7 @@
       Access key: AKIAYHH3AUCECTZPIWUX
       Secret access key: WurrzfPKFAjbQrzAGC0RgCCG+tM8GJA7U9z4AySA
       Click on Done
-		Open cmd and type mvn clean install to create spring-boot-aws-rds-mysql-asm-example.jar file
+      Open cmd and type mvn clean install to create spring-boot-aws-rds-mysql-asm-example.jar file
 		
 > Navigate to Elastic Beanstalk Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
