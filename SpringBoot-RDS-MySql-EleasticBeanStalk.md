@@ -54,9 +54,21 @@
 	Application name: spring-boot-aws-rds-mysql-example
 	Platform: Java
 	Platform branch: Choose appropriate Java version(Corretto 17)
+	#Optioanl Steps as db config is already provided through application.properties file
+		Click on Configure more options
+		Click on Database Edit
+		Username: root
+		Password: password
+		Click on Save
+		Click on Create App
+		Then Once Health is OK Click on Uplaod and Deploy 
+		Click on choose file
+		Upload spring-boot-aws-rds-mysql-example.jar
+		Click on Deploy
 	Application code: Upload your code
 	Source code origin: Click on choose file
 	Upload spring-boot-aws-rds-mysql-example.jar
+	
 	Click on Create Application
 	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsrdsmysqlexample-env and Health as OK(Green)
 	You will find the ec2 instance application url : http://springbootawsrdsmysqlexample-env.eba-m7umiaim.us-east-1.elasticbeanstalk.com/
