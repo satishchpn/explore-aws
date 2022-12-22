@@ -6,7 +6,7 @@
 > Steps To follow: 
 	
 	Step1: Create Database In RDS
-  Step2: Store Secret to ASM(AWS Secret Manager)
+  	Step2: Store Secret to ASM(AWS Secret Manager)
 	Step3: Develop Spring Boot Demp APP using the user credentials and RDS Database Config or Download the Demo Application Zip File and Update the Configs
 	Step4: Create Application in Elastic BeanStalk
 	Step5: Download Postman Collection(spring-boot-aws-rds-mysql-example.postman_collection)
@@ -42,29 +42,30 @@
 
 > Navigate to Secrets Manager Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 
-  Click on Store a new Secret
-  Secret type: Credentials for Amazon RDS database
-  Credentials
-    User name: root
-    Password: password
-  Select Database
-  DB Instance: keshrirdsdb
-  Click on Next
-  Secret name: keshri-db-credentails
-  Click on Next
-  Here you can enable/disable automatic Secret rotation based on need
-  Click on Next
-  Under Sample Code Section copy Java Code which we will use later in our application
-  Click on Store
+	  Click on Store a new Secret
+	  Secret type: Credentials for Amazon RDS database
+	  Credentials
+	    User name: root
+	    Password: password
+	  Select Database
+	  DB Instance: keshrirdsdb
+	  Click on Next
+	  Secret name: keshri-db-credentails
+	  Click on Next
+	  Here you can enable/disable automatic Secret rotation based on need
+	  Click on Next
+	  Under Sample Code Section copy Java Code which we will use later in our application
+	  Click on Store
    
 > Download Spring boot Project(spring-boot-aws-rds-mysql-asm-example.zip). 
 
 > Unzip it and update RDS Database Configs in application.properties file and build jar file to upload into Elastic BeanStalk.
 	
-	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
+> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
 		Open application.properties change server.port to 5000
 		server.port=5000
 		Update RDS Database Configurations like secret manager name, schemaName , region , accessKey and secretKey
+		
     To Get Access Key and Secret key
       Navigate to AWS Management Console
       On Top Right Corenr click on Logged in user
