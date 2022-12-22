@@ -4,16 +4,12 @@
 
 > Steps To follow: 
 	
-	Step 1: Create Table In RDS
-	Step 2: Create a User Group in IAM
-	Step3 : Create a User in IAM
-	Step4 : Create a Policy in IAM
-	Step5 : Attach the Policy To User Group
-	Step6:  Develop the Spring Boot Demp APP using the user credentials and DynamoDB Config or Download the Demo Application Zip File and Update DynamoDB Configs
+	Step 1: Create Databases In RDS
+	Step2:  Develop Spring Boot Demp APP using the user credentials and RDS Databases Config or Download the Demo Application Zip File and Update DataBasse Configs
 	Step7:  Create Application in Elastic BeanStalk
-	Steps8: Download Postman Collection(spring-boot-aws-dynamodb-example.postman_collection.json)
+	Steps8: Download Postman Collection(spring-boot-aws-rds-mysql-example.postman_collection)
 	Step9:  Update the Application url in Postaman APIs
-	Step10: Verify the API to perform CRUD Oertaions on DynamoDB Table Using Postman Colection
+	Step10: Verify the API to perform CRUD Oertaions on RDS DataBase Table Using Postman Colection
 
 > Navigate to RDS Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
@@ -41,82 +37,33 @@
 	Choose Type: MYSQL/Aurora
 	Source: Anywhere
 	Click on Save Rule
-  
-	Table Name: Employee
-	Partition key: employeeId(String)
-	Click on Create Table
-	Table got Created , now to access this table from Java Application we have to create User Group,User and Policy e.t.c
+	
+> Download Spring boot Project(spring-boot-aws-rds-mysql-example.zip). 
 
-> Navigate to IAM Dashboard (AWS Region: US East (N. Virginia) us-east-1)
-	
-	Create a User Group
-		Click on User Groups
-		Click on create Group
-		User group name: keshri_user_group
-		Select Policies: AmazonEC2FullAccess , AdministratorAccess
-		Click on Create Group
-	
-	Create a User
-		Click on Users
-		Click on Add Users
-		User name: keshri_admin_user
-		Select AWS access type: Access key - Programmatic access
-		Click on Next Permissions
-		Select keshri_user_group
-		Click on Next Tags
-		Click on Next Review
-		Click on Create User
-		After Successful creation of User you will get Access Key Id and Secret Access Key, 
-		Copy and keep with you, it will be used tpo connect to DynamoDB from Application
-		Access key ID: AKIAZPWCPFWX5OPZ6AFB
-		Secret access key : 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
-		Click on Close
-	
-	Create Policy
-		Click on Policies
-		Click on Create Policy
-		Choose  Service: DynamoDB & SNS using add addition policy
-		Actions:all access
-		Resources:All resources
-		Click on next tags
-		Click on Next review
-		Name: keshri_dynamo_db_policy
-		Click On Create policy
-	
-	Attch this Policy to User Group
-		Search policy : keshri_dynamo_db_policy
-		Select that policy
-		Click on Actions
-		Click On Attach
-		Select keshri_user_group
-		Click on Attach Policy
-			
-> Download Spring boot Project(spring-boot-aws-dynamodb-example.zip). 
-
-> Unzip it and update DynamoDB Configs in application.properties file and build jar file to upload into Elastic BeanStalk.
+> Unzip it and update RDS Database Configs in application.properties file and build jar file to upload into Elastic BeanStalk.
 	
 	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
 		Open application.properties change server.port to 5000
 		server.port=5000
-		Update DynamoDB Configurations
-		Open cmd and type mvn clean install to create spring-boot-aws-dynamodb-example.jar file
+		Update RDS Database Configurations
+		Open cmd and type mvn clean install to create spring-boot-aws-rds-mysql-example.jar file
 		
 > Navigate to Elastic Beanstalk Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
 	Click on Create Application
-	Application name: spring-boot-aws-dynamodb-example
+	Application name: spring-boot-aws-rds-mysql-example
 	Platform: Java
 	Platform branch: Choose appropriate Java version(Corretto 17)
 	Application code: Upload your code
 	Source code origin: Click on choose file
-	Upload spring-boot-aws-dynamodb-example.jar
+	Upload spring-boot-aws-rds-mysql-example.jar
 	Click on Create Application
-	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsdynamodbexample-env and Health as OK(Green)
-	You will find the ec2 instance application url : http://springbootawsdynamodbexample-env.eba-pdkhfjup.us-east-1.elasticbeanstalk.com/
+	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsrdsmysqlexample-env and Health as OK(Green)
+	You will find the ec2 instance application url : http://springbootawsrdsmysqlexample-env.eba-m7umiaim.us-east-1.elasticbeanstalk.com/
 	
 > Verify the API through Postman using CRUD Operations
 		
 		Update the Application url in Postaman APIs
-		Call Each API to Perform CRUD Oertaions on DynamoDB Table
+		Call Each API to Perform CRUD Oertaions on RDS Database Table
 		
 		
