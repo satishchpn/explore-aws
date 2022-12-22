@@ -4,12 +4,12 @@
 
 > Steps To follow: 
 	
-	Step 1: Create Database In RDS
-	Step2:  Develop Spring Boot Demp APP using the user credentials and RDS Database Config or Download the Demo Application Zip File and Update DataBase Configs
-	Step7:  Create Application in Elastic BeanStalk
-	Steps8: Download Postman Collection(spring-boot-aws-rds-mysql-example.postman_collection)
-	Step9:  Update the Application url in Postaman APIs
-	Step10: Verify the API to perform CRUD Oertaions on RDS DataBase Table Using Postman Colection
+	Step1:  Create Database In RDS
+	Step2:  Develop Spring Boot Demp APP using the user credentials and RDS Database Config or Download the Demo Application Zip File and Update the Configs
+	Step3:  Create Application in Elastic BeanStalk
+	Step4:  Download Postman Collection(spring-boot-aws-rds-mysql-example.postman_collection)
+	Step5:  Update the Application url in Postaman APIs
+	Step6:  Verify the API to perform CRUD Oertaions on RDS DataBase Table Using Postman Colection
 
 > Navigate to RDS Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
