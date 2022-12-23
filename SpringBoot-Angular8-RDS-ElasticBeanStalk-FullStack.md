@@ -148,8 +148,8 @@
 	
 > Navigate to the Hosted Website In Browser
 
-		http://keshri-bucket.s3-website-us-east-1.amazonaws.com/
-    		Perfom the CRUD Operations 
+	http://keshri-bucket.s3-website-us-east-1.amazonaws.com/
+	Perfom the CRUD Operations 
     
 		
 		
