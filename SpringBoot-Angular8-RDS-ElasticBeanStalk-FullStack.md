@@ -1,17 +1,20 @@
 
-
-#Use ElasticBeanStalk & RDS
+#Spring Boot Angular8 CRUD APP
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Use SpringBoot + AWS RDS + MYSQL + ElasticBeanStalk & S3
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 > Steps To follow: 
 	
 	Step1:  Create Database In RDS
-  Step2:  Download keshri-aws-crud-demo.zip and unzip it to get Spring Boot and Angular demo Projects.
-	Step3:  Update Spring Boot APP Configs
-  Step4:  Update Angular project Configs and build to generate production ready code.
-	Step5:  Create Application in Elastic BeanStalk and deploy Spring Boot Application
-  Step6:  Create S3 Bucket to deploy the Angualr Application
-  Step7:  See the Hosted Website In Browser
+  	Step2:  Download keshri-aws-crud-demo.zip and unzip it to get Spring Boot and Angular demo Projects.
+	Step3:  Create Application in Elastic BeanStalk.
+  	Step4:  Update Angular project Configs like apiendpoint url and build to generate production ready code.
+	Step5:  Create S3 Bucket and deploy the Angular Application
+	Step5:  Update Spring Boot APP Configs like DB Config and cors url  	
+	Step6:  Deploy Spriing Boot App to Elastic Beanstalk
+	Step7:  See the Hosted Website In Browser
+	Step8:  Perform CRUD Operations
 
 > Navigate to RDS Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
@@ -49,13 +52,13 @@
 	Click on Create Application
 	Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsrdsmysqlexample-env and Health as OK(Green)
 	You will find the ec2 instance application url : http://springbootawsrdsmysqlexample-env.eba-yiqszi3t.us-east-1.elasticbeanstalk.com/
-  Use this application url to update in Angular Application ApiEndpoint.
+  	Use this application url to update in Angular Application ApiEndpoint.
   
 > Update Angular project(keshri-angular-demo). Unzip and build to later place into aws s3 bucket.
 
-  Open src/app/apiEndPoint.ts
-  Update baseUrl
-  baseUrl: 'http://springbootawsrdsmysqlexample-env.eba-yiqszi3t.us-east-1.elasticbeanstalk.com/api/v1/employees'
+  	Open src/app/apiEndPoint.ts
+  	Update baseUrl
+  	baseUrl: 'http://springbootawsrdsmysqlexample-env.eba-yiqszi3t.us-east-1.elasticbeanstalk.com/api/v1/employees'
 	Go to project root directory in local
 	Open cmd
 	Type below command to build and generate production ready code
@@ -103,7 +106,7 @@
 		Click on Upload
 		Drag and drop all the files from application dist/keshri-angular-demo to keshri-bucket
 		Click on Upload
-    Click on Close
+    		Click on Close
 		
 		Now Go to keshri-bucket properties tab
 		Click on Edit Static website hosting
@@ -124,19 +127,20 @@
  
 > Update Spring boot Project(spring-boot-aws-rds-mysql-example). 
 
-> Update RDS Database Configs and Angular in application.properties file and build jar file to upload into Elastic BeanStalk.
+	Update RDS Database Configs and Angular Application url in application.properties file and build jar file to upload into Elastic BeanStalk.
 	
 	> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
 		Open application.properties change server.port to 5000
 		server.port=5000
 		Update RDS Database Configurations
+		Update CORS URL
 		Open cmd and type mvn clean install to create spring-boot-aws-rds-mysql-example.jar file
 		
 > Navigate to Elastic Beanstalk Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
 	Click on Springbootawsrdsmysqlexample-env
 	Click on Upload and Deploy
-  Click on choose file
+  	Click on choose file
 	Upload spring-boot-aws-rds-mysql-example.jar
 	Click on Deploy
 	Wait to Deploy and EC2 Instance get created and see Successfully launched environment:Springbootawsrdsmysqlexample-env and Health as OK(Green)
@@ -145,8 +149,7 @@
 > Navigate to the Hosted Website In Browser
 
 		http://keshri-bucket.s3-website-us-east-1.amazonaws.com/
-    Perfom the CRUD Operations
-    
+    		Perfom the CRUD Operations 
     
 		
 		
