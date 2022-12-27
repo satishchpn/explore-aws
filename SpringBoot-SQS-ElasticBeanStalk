@@ -56,7 +56,7 @@ Download Spring boot Project(spring-boot-aws-sqs-example.zip). Unzip , Update th
     Source code origin: Click on choose file
     Upload spring-boot-aws-sqs-example.jar
     Click on Create Application
-    Wait to EC2 Instance get created and see Successfully launched environment: Springbootawsexample-env and Health as OK(Green)
+    Wait to EC2 Instance get created and see Successfully launched environment: Springbootawssqsexample-env and Health as OK(Green)
     You will find the ec2 instance application url : http://springbootawssqsexample-env.eba-9bufmp9u.us-east-1.elasticbeanstalk.com/
   
 > Send some sample message through Browser
