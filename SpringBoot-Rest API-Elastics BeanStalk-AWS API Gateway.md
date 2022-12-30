@@ -35,6 +35,7 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Create new API: New
 	API Name: keshri-employee-service
 	Click on Create API
+	
 	Click on Actions
 	Click on Create Resource
 	Resource Name: keshri-employee-service
@@ -47,6 +48,7 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Select Use HTTP Proxy integration
 	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
 	Click on Save
+	
 	Again Click on Create Method
 	Select POST Type
 	Click on tick to create it.
@@ -54,6 +56,7 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Select Use HTTP Proxy integration
 	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
 	Click on Save
+	
 	Again Click on Create Method
 	Select PUT Type
 	Click on tick to create it.
@@ -61,6 +64,7 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Select Use HTTP Proxy integration
 	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
 	Click on Save
+	
 	Again Click on Create Method
 	Select DELETE Type
 	Click on tick to create it.
@@ -68,6 +72,7 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Select Use HTTP Proxy integration
 	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
 	Click on Save
+	
 	Click on Actions
 	Click on Deploy API
 	Deployment stage: New Stage
@@ -79,6 +84,7 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Use This URL in Postman Collection to Call the api or Use API Gateway itslf to Test the API
 
 > Test the API
+	
 	Click on Resources
 	Click on any method in API Gateway resource
 	Click on Test
