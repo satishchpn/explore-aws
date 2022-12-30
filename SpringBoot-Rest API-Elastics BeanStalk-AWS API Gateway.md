@@ -79,7 +79,7 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Use This URL in Postman Collection to Call the api or Use API Gateway itslf to Test the API
 
 > Test the API
-	
+	Click on Resources
 	Click on any method in API Gateway resource
 	Click on Test
 	Add if any query parameter needed
