@@ -1,92 +1,81 @@
-
-#Use Standalone Java - AWS Lambda
+#Use Spring Boot Rest ,  ElasticBeanStalk , AWS API Gateway
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
-> Download Standalone Java Project Project(StandaloneAWSLambdaExample.zip). Unzip it and create jar out of it.
+  
+Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it and build jar file to later upload into Elastic BeanStalk.
+  
+> Note: Elastic Beanstalk is configured to forward requests to port 5000 by default so change the application port to 5000 if not there
+
+    Open application.properties change server.port to 5000
+    server.port=5000
+    Open cmd and type mvn clean install to create spring-boot-rest-aws-api-gateway-example file
+    
+> Login to AWS account
+    UN: cloud_user
+    Password: <password>
+			
+> Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
+
+> Navigate to Elastic Beanstalk Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
-	Unzip StandaloneAWSLambdaExample.zip
-	Import java application to Eclipse
-	Right click on project
-	Click on Export 
-	Under Java select Jar File
-	Click Next
-	Click Next
-	Click Next
-	Browse and Select Main Class: com.keshri.aws.lambda.LambdaMain
-	Click on Finish
-	This will create StandaloneAWSLambdaExample.jar
-	Use the jar to create the Lambda Function
+    Click on Create Application
+    Application name: spring-boot-rest-aws-api-gateway-example
+    Platform: Java
+    Platform branch: Choose appropriate Java version(Corretto 17)
+    Application code: Upload your code
+    Source code origin: Click on choose file
+    Upload spring-boot-rest-aws-api-gateway-example.jar
+    Click on Create Application
+    Wait to EC2 Instance get created and see Successfully launched environment: Springbootrestawsapigatewayexample-env and Health as OK(Green)
+    You will find the ec2 instance application url : http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/
+
+> Navigate to API Gateway Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
- 
-> Navigate to Lambda Dashboard (AWS Region: US East (N. Virginia) us-east-1)
-
-	Add a Lambda Function
-	      Click on Create Function
-	      Function name: EmployeeSupplier
-	      Runtime: Java 11 Corretto
-	      Click on Create function
-	      Go to Code Section
-	      Click Upload from
-	      Select .zip or .jar file
-	      Click on Upload
-	      Select the application .jar file(StandaloneAWSLambdaExample.jar)
-	      Click on Save
-	      Click on Edit Runtime settings
-	      Handler: com.keshri.aws.lambda.functions.EmployeeSupplier::get
-	      Click on Save
-
-	      Now Click on Test Section
-	      In Event JSON paste the below sample JSON
-	      ""
-
-	      Click on Test
-	      It will return List of Employyes.
-	      
-	Add another Lambda Function
-	      Click on Create Function
-	      Function name: EmployeeConsumer
-	      Runtime: Java 11 Corretto
-	      Click on Create function
-	      Go to Code Section
-	      Click Upload from
-	      Select .zip or .jar file
-	      Click on Upload
-	      Select the application .jar file(StandaloneAWSLambdaExample.jar)
-	      Click on Save
-	      Click on Edit Runtime settings
-	      Handler: com.keshri.aws.lambda.functions.EmployeeConsumer::accept
-	      Click on Save
-
-	      Now Click on Test Section
-	      In Event JSON paste the below sample JSON
-		{
-		  "id": 4,
-		  "firstName": "Kumar",
-		  "lastName": "Saurabh",
-		  "emailId": "saurabh@gmail.com"
-		}
-
-	      Click on Test
-	      It Will add one Emploee to the List
-      
-      Add another Lambda Function
-	      Click on Create Function
-	      Function name: EmployeeFunction
-	      Runtime: Java 11 Corretto
-	      Click on Create function
-	      Go to Code Section
-	      Click Upload from
-	      Select .zip or .jar file
-	      Click on Upload
-	      Select the application .jar file(StandaloneAWSLambdaExample.jar)
-	      Click on Save
-	      Click on Edit Runtime settings
-	      Handler: com.keshri.aws.lambda.functions.EmployeeFunction::apply
-	      Click on Save
-
-	      Now Click on Test Section
-	      In Event JSON paste the below sample JSON
-		"Satish"
-
-	      Click on Test
-	      It Will return one Employee whose firstName is Satish
+	Click on Build REST API
+	Choose the protocol: Rest
+	Create new API: New
+	API Name: keshri-employee-service
+	Click on Create API
+	Click on Actions
+	Click on Create Resource
+	Resource Name: keshri-employee-service
+	Click on Create Resource
+	Click on Actions
+	Click on Create Method
+	Select GET Type
+	Click on tick to create it.
+	Integration type: HTTP
+	Select Use HTTP Proxy integration
+	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
+	Click on Save
+	Again Click on Create Method
+	Select POST Type
+	Click on tick to create it.
+	Integration type: HTTP
+	Select Use HTTP Proxy integration
+	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
+	Click on Save
+	Again Click on Create Method
+	Select PUT Type
+	Click on tick to create it.
+	Integration type: HTTP
+	Select Use HTTP Proxy integration
+	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
+	Click on Save
+	Again Click on Create Method
+	Select DELETE Type
+	Click on tick to create it.
+	Integration type: HTTP
+	Select Use HTTP Proxy integration
+	Endpoint URL: http://springbootrestawsapigatewayexample-env.eba-u2izsrft.us-east-1.elasticbeanstalk.com/employees
+	Click on Save
+	Click on Actions
+	Click on Deploy API
+	Deployment stage: New Stage
+	Stage name*: prod
+	Click on Deploy
+	Now Under Stage click on prod
+	Click on GET or Any Method you will find Invoke URL
+	Invoke URL: https://3w4hjrtmw8.execute-api.us-east-1.amazonaws.com/prod/keshri-employee-service
+	Use This URL in Postman Collection to Call the api or Use API Gateway itslf to Test the API
+	
+	
