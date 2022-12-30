@@ -84,7 +84,10 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Click on Test
 	Add if any query parameter needed
 	Click on Test
-	See the Result in the Gateqay Itself with all the data and logs
+	See the Result in the Gateway Itself with all the data and logs
+	To Test Query param API under Query Strings
+	id=3
+	See Employee with id=3 as the Result in the Gateway
 	
 	
 	
