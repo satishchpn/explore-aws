@@ -49,8 +49,8 @@
 	      Click on Edit Runtime settings
 	      Handler: com.keshri.aws.lambda.functions.EmployeeConsumer::accept
 	      Click on Save
-	      
-      	Add another Lambda Function
+
+	Add another Lambda Function
 	      Click on Create Function
 	      Function name: EmployeeFunction
 	      Runtime: Java 11 Corretto
