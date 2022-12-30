@@ -77,5 +77,14 @@ Download Spring boot Project(spring-boot-rest-aws-api-gateway-example). Unzip it
 	Click on GET or Any Method you will find Invoke URL
 	Invoke URL: https://3w4hjrtmw8.execute-api.us-east-1.amazonaws.com/prod/keshri-employee-service
 	Use This URL in Postman Collection to Call the api or Use API Gateway itslf to Test the API
+
+> Test the API
+	
+	Click on any method in API Gateway resource
+	Click on Test
+	Add if any query parameter needed
+	Click on Test
+	See the Result in the Gateqay Itself with all the data and logs
+	
 	
 	
