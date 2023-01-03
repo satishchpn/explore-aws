@@ -65,7 +65,7 @@
 		Cluster name: keshri-aws-cluster
 		Click on Create
 		Click on View Cluster
-		Click on Tasks
+		Click on Tasks Tab
 		Click on Run new Task
 		Launch type: FARGATE
 		Task Definition: keshri-spring-boot-ecs-example
@@ -83,7 +83,7 @@
 		Click on Run Task
 		Now select keshri-spring-boot-ecs-example task definition and open in new browser
 		In Chcek if the Status is RUNNING
-		Expand the container and in Detail Section click on View logs in CloudWatch
+		Expand or Select the container and in Detail Network Section Find IP
 		From Network Section find Public IP: 3.215.182.136
 		
 
