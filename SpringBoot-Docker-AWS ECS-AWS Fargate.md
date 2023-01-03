@@ -3,22 +3,26 @@
 
 > Download Spring boot Project(keshri-spring-boot-aws-crud-demo.zip). Unzip it and build docker image.
 
-	Start Docker Daemon
-	Open CMD at Project root directory and type below command
-	mvn spring-boot:build-image
-	after successful image creation run below command to see if image is created
-	To list the images
-	docker image ls
-	docker run --tty --publish 8080:5000 keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT
-	open browser and see if api is working
-	<docker_host>:8080
-	Login to docker account
-	docker login -u satishchpn
-	Add tag to docker image using docker username(satishchpn)
-	docker tag keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT satishchpn/keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT
-	push image to docker hub
-	docker push satishchpn/keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT
-	see if this image available in logged-in dockerhub dashboard
+	Create Docker Imgae
+	
+		Start Docker Daemon
+		Open CMD at Project root directory and type below command
+		mvn spring-boot:build-image
+		after successful image creation run below command to see if image is created
+		To list the images
+		docker image ls
+		docker run --tty --publish 8080:5000 keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT
+		open browser and see if api is working
+		<docker_host>:8080
+		Login to docker account
+		docker login -u satishchpn
+		Add tag to docker image using docker username(satishchpn)
+		docker tag keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT satishchpn/keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT
+	
+	Push Docker Image to DockerHub
+	
+		docker push satishchpn/keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT
+		see if this image available in logged-in dockerhub dashboard
 
 
 > Login to AWS account
