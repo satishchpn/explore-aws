@@ -7,135 +7,72 @@
 
 
 > Login to AWS account
+
 	UN: cloud_user
 	Password: <password>
 	
 > Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
 
-> Navigate to IAM Dashboard (AWS Region: US East (N. Virginia) us-east-1)
+> Navigate to ECS Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
-	Click on Roles
+	Create Task Defination
 	
-		Click on create Role
-		Trusted entity type:AWS Service
-		Use case:EC2
-		Click on Next
-		Click on create Policy
-		Choose  Service:S3 & Access Analyzer using add addition policy
-		Actions:all access
-		Resources:All resources
-		Click on next tags
-		Click on Next review
-		Name:keshri_policy
-		Click On create policy
-		Refresh Roles page
-		Choose AmazonS3FullAccess,keshri_policy
-		Click on Next
-		Role Name:keshri_role
-		Click on create Role
-
-> Navigate to S3 Dashboard (AWS Region: US East (N. Virginia) us-east-1)
-
-		Click on create Bucket
-		
-		Bucket Name:keshri-bucket
-		AWS Region: US East (N. Virginia) us-east-1
-		De-Select : Block all public access
-		Select : I acknowledge
-		Click on create Bucket
-
-		Click on keshri-bucket
-		Go to permissions tab 
-		Click on Edit Bucket Policy
-		Paste below policy JSON
-			{
-				   "Version":"2012-10-17",
-				   "Id":"Policy1671206715413",
-				   "Statement":[
-					  {
-						 "Sid":"Stmt1671206713512",
-						 "Effect":"Allow",
-						 "Principal":"*",
-						 "Action":"s3:*",
-						 "Resource":"arn:aws:s3:::keshri-bucket/*"
-					  }
-				   ]
-			}
-			
-		Click on Save changes
-		
-		Click on Buckets
-		Select keshri-bucket (will able to see access as public)
-		Click on Upload
-		Drop spring-boot-aws-example.jar
-		Click on Upload
-		Now click on uploaded jar to see the details
-		Object URL it will be used later to download the jar from keshri_ec2: https://keshri-bucket.s3.amazonaws.com/spring-boot-aws-example.jar
-
-> Navigate to EC2 Dashboard(AWS Region: US East (N. Virginia) us-east-1)
+		Click on Task Defination
+		Click on create new Task Defination
+		Launch type: FARGATE
+		Click on Next Step
+		Task definition name: keshri-spring-boot-ecs-example
+		Task role: None
+		Task memory (GB): 1 GB
+		Task CPU (vCPU): 0.5vCPU
+		Click on Add Container
+		Container name: keshri-docker-container
+		Image: docker.io/satishchpn/keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT
+		Memory Limits (MiB): Hard Limit (1024)
+		Port mappings: 
+		Container port: 8080
+		Click on Add port mapping
+		Container port: 80
+		Click on Add
+		Click on Create
+		Click on View Task Definition
 	
-		Click on Launch Instance
+	Create Cluster
+	
+		Click on Clusters
+		Click on Create Cluster
+		Select Networking only
+		Click on Next Step
+		Cluster name: keshri-aws-cluster
+		Click on Create
+		Click on View Cluster
+		Click on Tasks
+		Click on Run new Task
+		Launch type: FARGATE
+		Task Definition: keshri-spring-boot-ecs-example
+		Cluster: keshri-aws-cluster
+		Select Cluster VPC : choose default one
+		Subnets: choose first one
+		Security groups: Click on edit
+		Assigned security groups: Create new security group
+		Security group name: keshri-security-group
+		Inbound rules for security group
+		Type: ALL TCP
+		Click on Add rule
+		Type: ALL Traffic
+		Click on Save
+		Click on Run Task
+		Now select keshri-spring-boot-ecs-example task definition and open in new browser
+		In Chcek if the Status is RUNNING
+		Expand the container and in Detail Section click on View logs in CloudWatch
+		From Network Section find Public IP: 3.215.182.136
 		
-		Name:keshri_ec2
-		Click on Create new key pair
-		Key pair name:keshri_ec2
-		Key pair type:RSA
-		Private key file format:.ppk
-		Click on create key pair
-		Save the download file keshri_ec2.ppk locally so later that can be used to connect through putty
-
-		Click on Edit Network settings
-		Under Inbound security groups rules click on add security group rule
-		Type:Custom TCP
-		Port Range:5000 (Intentionally given as later In elastic beanstalk default port is 5000 so keeping common across all example)
-		SourceType:Anywhere
-		Click Advanced Details
-		Choose IAM Instance Profile:keshri_role
-		Click on Launch Instance
-
-> Connect to keshri_ec2 EC2 instance using Putty
-
-		Go to EC2
-		
-		Click on Instances
-		Select keshri_ec2 to see the details
-		Copy Public IPv4 DNS: ec2-54-157-252-131.compute-1.amazonaws.com
-		
-		Open Putty
-		
-		Host name : ec2-54-157-252-131.compute-1.amazonaws.com
-		Click on Connection>
-		Click On Data
-		UserName=ec2-user
-		Click on Ssh
-		Click on Auth
-		Click on Credentials
-		Choose Private key file:browse and locate the keshri_ec2.ppk
-		Click on Session
-		Give name in Saved Session: keshri_aws_instance
-		Click on Open
-		Click on accept
-		
-		After successful login	type below commands in Putty Terminal
-		
-		Putty Terminal
-		
-		sudo -i
-		yum install java
-		y
-		alternatives --config java(command to check java versions availbale on that ec2 instance)
-		aws s3 ls(To see available s3 bucket access- keshri-bucket)
-		Download the jar from s3 bucket to keshri_ec2 instance
-		wget <jar_url>
-		wget https://keshri-bucket.s3.amazonaws.com/spring-boot-aws-example.jar
-		ls
-		Run the Jar
-		java -jar spring-boot-aws-example.jar
 
 > See the API Result In Browser
 
-		http://ec2-54-157-252-131.compute-1.amazonaws.com:5000
+		http://3.215.182.136:5000/
 		Hi Keshri - Welcome to AWS
 		
-		http://ec2-54-157-252-131.compute-1.amazonaws.com:5000/home
-		Welcome Keshri to First Spring Boot - AWS Deployment Demo
+		http://3.215.182.136:5000/employees
+		See List of Employees
+	
