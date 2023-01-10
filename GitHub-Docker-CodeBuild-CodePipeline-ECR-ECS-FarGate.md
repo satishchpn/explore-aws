@@ -4,6 +4,8 @@
 
 > Create Spring boot Project(keshri-spring-boot-aws-crud-demo) in GitHub(https://github.com/satishchpn/keshri-spring-boot-aws-crud-demo)
 
+	Update buildspec.yml content with buildspec_v2.yml
+
 > Login to AWS account
 
 	UN: cloud_user
