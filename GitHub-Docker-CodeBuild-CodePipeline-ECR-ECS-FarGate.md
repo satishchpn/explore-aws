@@ -45,9 +45,37 @@
 	Click on Attach Policies
 	Select these policies : AmazonEC2ContainerRegistryFullAccess,AmazonEC2ContainerRegistryPowerUser
 	Click on Attach Policies
+	
+	Create a User Group
+		Click on User Groups
+		Click on create Group
+		User group name: keshri_user_group
+		Select Policies: IAMFullAccess , AdministratorAccess
+		Click on Create Group
+
+	Create a User
+		Click on Users
+		Click on Add Users
+		User name: keshri_admin_user
+		Select AWS access type: Access key - Programmatic access , AWS Management Console access
+		Console password: Pass@123
+		Require password reset: UnSelect
+		Click on Next Permissions
+		Select keshri_user_group
+		Click on Next Tags
+		Click on Next Review
+		Click on Create User
+		After Successful creation of User you will get Access Key Id and Secret Access Key, 
+		Copy and keep with you, it will be used tpo connect to DynamoDB from Application
+		Access key ID: AKIA5MFQEV3DFJPNYP32
+		Secret access key : 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
+		If Not found then Click on that User and In Access Keys Section
+		Click on Create Access Key to get the access key and secret key
+		Click on Close
 
 > Navigate to CodeBuild Dashboard (AWS Region: US East (N. Virginia) us-east-1)
-	
+
+	Select keshri-demo-project-code-build	
 	Click on Start Build
 		
 > Navigate to ECS Dashboard (AWS Region: US East (N. Virginia) us-east-1)
