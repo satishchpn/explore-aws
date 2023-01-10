@@ -56,9 +56,9 @@
 	
 	Create Repository
 	
-		Click on Create Repository Get Started
+		Click on Create a Repository Get Started
 		Repository name: keshri-registry
-		Click on Create Registry
+		Click on Create Repository
 		Select keshri-registry
 		Click on View Push commands (Use this command later to push the image to ECR)
 
