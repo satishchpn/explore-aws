@@ -49,45 +49,6 @@
 > Navigate to CodeBuild Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
 	Click on Start Build
-
-> Install AWS CLI
-
-	Go to this link and follow the steps given or folloow the steps below
-	
-		https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-	
-	Open cmd in admin mode and type below command to install AWS CLI
-	
-		> msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
-	
-	To Confirm Installation type below command in cmd to see AWS CLI version
-	
-		> aws --version
-
-> Configure AWS
-
-	Open cmd and type below commands
-	
-		> aws configure
-			AWS Access Key ID [None]: AKIA5MFQEV3DFJPNYP32
-			AWS Secret Access Key [None]: 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
-			Default region name [None]: us-east-1
-			Default output format [None]: json
- 	
-		> aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 919492406982.dkr.ecr.us-east-1.amazonaws.com
-		
-			It will give output as Login Succeeded
-			
-		> docker tag keshri-spring-boot-aws-crud-demo:0.0.1-SNAPSHOT 919492406982.dkr.ecr.us-east-1.amazonaws.com/keshri-registry
-		
-		> docker push 919492406982.dkr.ecr.us-east-1.amazonaws.com/keshri-registry
-
-> Navigate to ECR Dashboard (AWS Region: US East (N. Virginia) us-east-1)
-
-	Select keshri-registry
-	Refresh and see the pushed image
-	Copy the Image URI which will be used later to deploy to ECS
-	Image URI: 919492406982.dkr.ecr.us-east-1.amazonaws.com/keshri-registry:latest
 		
 > Navigate to ECS Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 
