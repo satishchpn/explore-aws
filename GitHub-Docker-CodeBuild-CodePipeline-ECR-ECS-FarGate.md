@@ -11,35 +11,6 @@
 	
 > Note: Always make sure that you have selected AWS Region: US East (N. Virginia) us-east-1
 
-> Navigate to IAM Dashboard (AWS Region: US East (N. Virginia) us-east-1)
-
-	Create a User Group
-	Click on User Groups
-	Click on create Group
-	User group name: keshri_user_group
-	Select Policies: IAMFullAccess , AdministratorAccess
-	Click on Create Group
-
-	Create a User
-		Click on Users
-		Click on Add Users
-		User name: keshri_admin_user
-		Select AWS access type: Access key - Programmatic access , AWS Management Console access
-		Console password: Pass@123
-		Require password reset: UnSelect
-		Click on Next Permissions
-		Select keshri_user_group
-		Click on Next Tags
-		Click on Next Review
-		Click on Create User
-		After Successful creation of User you will get Access Key Id and Secret Access Key, 
-		Copy and keep with you, it will be used tpo connect to DynamoDB from Application
-		Access key ID: AKIA5MFQEV3DFJPNYP32
-		Secret access key : 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
-		If Not found then Click on that User and In Access Keys Section
-		Click on Create Access Key to get the access key and secret key
-		Click on Close
-
 > Navigate to ECR Dashboard (AWS Region: US East (N. Virginia) us-east-1)
 	
 	Create Repository
@@ -49,6 +20,35 @@
 		Click on Create Repository
 		Select keshri-registry
 		Click on View Push commands (Use this command later to push the image to ECR)
+
+> Navigate to CodeBuild Dashboard (AWS Region: US East (N. Virginia) us-east-1) to create and push Docker Image to ECR
+	
+	Click on Create build project
+	Project name: keshri-demo-project-code-build
+	Select Source provider: GitHub
+	Click on Connect to GitHub
+	Grant the Access
+	Repository URL: <https://github.com/xyz>
+	Operating system: Amazon Linux 2
+	Runtime(s): Standard
+	Image: choose latest one(4.0)
+	Privileged: tick or enable this flag
+	Role: sleect existing or create new role (codebuild-keshri-demo-project-service-role)
+	Click on create build project
+
+> Navigate to IAM Dashboard (AWS Region: US East (N. Virginia) us-east-1)
+
+	Click on Roles
+	Search codebuild-keshri-demo-project-service-role
+	Select that role
+	Click on Add permissions
+	Click on Attach Policies
+	Select these policies : AmazonEC2ContainerRegistryFullAccess,AmazonEC2ContainerRegistryPowerUser
+	Click on Attach Policies
+
+> Navigate to CodeBuild Dashboard (AWS Region: US East (N. Virginia) us-east-1)
+	
+	Click on Start Build
 
 > Install AWS CLI
 
